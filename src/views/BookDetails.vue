@@ -1,6 +1,5 @@
 <template>
   <div>
-    <!-- Header -->
     <header class="book-details-header">
       <h1>LIVRESSE</h1>
       <div class="user-info-container">
@@ -14,17 +13,12 @@
         </svg>
       </button>
     </header>
-
-    <!-- Detalhes do livro -->
     <div class="page-container" v-if="book">
       <div class="book-details-content">
-        <!-- Exibição da imagem do livro -->
         <img v-if="book.photo_book && book.photo_book.data" 
              :src="`http://localhost:5555${book.photo_book.data.attributes.formats?.small?.url || book.photo_book.data.attributes.url}`" 
              alt="Foto do Livro" 
              class="book-photo" />
-        
-        <!-- Detalhes do livro -->
         <h2>{{ book.name_book || 'Título não disponível' }}</h2>
         <p><strong>Lance Mínimo:</strong> R$ {{ book.price_book || 'N/A' }}</p>
         <p><strong>Detalhes:</strong> {{ book.description_book || 'Descrição indisponível' }}</p>
@@ -46,7 +40,6 @@
           <p v-if="winner">Lance vencedor: R$ {{ winner.bidValue }}</p>
           <p v-else>Nenhum lance foi feito.</p>
         </div>
-        <!-- Area dos lances-->
         <div class="bids-list">
           <h3>Lances</h3>
           <ul v-if="bids.length > 0">
@@ -57,7 +50,6 @@
           </ul>
           <p v-else>Nenhum lance disponível</p>
         </div>
-        <!--Botoes so visiveis para admins-->
         <div class="button-container">
         <button v-if="isAdmin && !book.encerrado" class="end-button" @click="endAuction">
           Encerrar Leilão
@@ -77,7 +69,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
-import { useUserStore } from '@/stores/userStore'; 
+import { useUserStore } from '../stores/userStore'; 
 
 const route = useRoute();
 const router = useRouter();
@@ -149,9 +141,7 @@ const placeBid = async () => {
     alert('Valor do lance inválido. O valor deve ser maior que o lance mínimo.');
     return;
   }
-  // Obtém o maior lance atual
   const highestBid = bids.value.length > 0 ? bids.value[0].attributes.Valor : book.value.price_book;
-  // Verifica se o lance é maior que o maior lance atual
   if (bidAmount.value <= highestBid) {
     alert(`O lance deve ser maior que o lance atual de R$ ${highestBid}.`);
     return;
@@ -248,8 +238,8 @@ const endAuction = async () => {
         body: JSON.stringify({
           data: {
             encerrado: true, 
-            vencedor: winnerResult ? winnerResult.username : null,  // Salvando o nome do vencedor
-            valorVencedor: winnerResult ? winnerResult.bidValue : null//Salva o maior valor do lance vencedor
+            vencedor: winnerResult ? winnerResult.username : null,  
+            valorVencedor: winnerResult ? winnerResult.bidValue : null
           },
         }),
       });

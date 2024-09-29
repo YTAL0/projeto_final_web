@@ -13,7 +13,6 @@ export const useUserStore = defineStore('userStore', () => {
   const user = ref<User | null>(null);
   const token = ref<string | null>(null);
 
-  // Função para definir o usuário e o token
   const setUser = (userData: User, jwtToken: string) => {
     user.value = {
       ...userData,
@@ -31,7 +30,7 @@ export const useUserStore = defineStore('userStore', () => {
     localStorage.removeItem('user');
   };
 
-  // Função para carregar o usuário autenticado e seus créditos
+
   const loadUserFromStorage = async () => {
     const storedToken = localStorage.getItem('jwt');
     if (storedToken) {
@@ -66,7 +65,6 @@ export const useUserStore = defineStore('userStore', () => {
     }
   };
 
-  // Função para deduzir créditos do usuário
   const deductCredits = async (credits: number) => {
     if (user.value && token.value) {
       try {

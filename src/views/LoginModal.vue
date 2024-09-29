@@ -1,5 +1,4 @@
 <template>
-  <!-- Modal de Login -->
   <div class="login-modal-overlay" v-if="isLoginModalVisible">
     <div class="login-modal-content">
       <button class="close-button" @click="closeModals">X</button>
@@ -20,8 +19,6 @@
       </p>
     </div>
   </div>
-
-  <!-- Modal de Registro -->
   <div class="register-modal-overlay" v-if="isRegisterModalVisible">
     <div class="register-modal-content">
       <button class="close-button" @click="closeModals">X</button>
@@ -55,17 +52,16 @@
 
 <script setup lang="ts">
 import { ref, onMounted, defineEmits, defineProps, watch } from 'vue';
-import { useUserStore } from '@/stores/userStore';
+import { useUserStore } from '../stores/userStore';
 
-// Definindo props e emits para a integração do v-model com o componente pai
 const props = defineProps({
-  modelValue: Boolean, // modelValue será passado do componente pai para controlar a visibilidade da modal
+  modelValue: Boolean, 
 });
-const emit = defineEmits(['update:modelValue']); // Define o evento para atualizar o valor do modelValue no componente pai
+const emit = defineEmits(['update:modelValue']); 
 
 const userStore = useUserStore();
 
-// Inicializa o estado da modal com base na prop modelValue
+
 const isLoginModalVisible = ref(props.modelValue);
 const isRegisterModalVisible = ref(false);
 
@@ -76,7 +72,6 @@ const registerEmail = ref('');
 const registerPassword = ref('');
 const confirmPassword = ref('');
 
-// Observa mudanças na prop modelValue e atualiza o estado local
 watch(() => props.modelValue, (newValue) => {
   isLoginModalVisible.value = newValue;
 });

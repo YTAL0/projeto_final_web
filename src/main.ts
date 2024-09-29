@@ -1,16 +1,13 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import router from './router'; // se você estiver usando o Vue Router
+import router from './router'; 
 import { createPinia } from 'pinia';
-import { useUserStore } from './stores/userStore'; // Importa sua store de usuário
+import { useUserStore } from './stores/userStore'; 
 
 const app = createApp(App);
-const pinia = createPinia(); // Cria uma instância do Pinia
-
-app.use(router).use(pinia); // Usa Pinia e o Vue Router
-
-// Antes de montar a aplicação, garante que o estado do usuário seja carregado
+const pinia = createPinia(); 
+app.use(router).use(pinia); 
 const userStore = useUserStore();
 userStore.loadUserFromStorage().then(() => {
-  app.mount('#app'); // Só monta a aplicação após carregar o usuário
+  app.mount('#app'); 
 });
