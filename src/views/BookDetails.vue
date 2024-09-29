@@ -16,7 +16,7 @@
     <div class="page-container" v-if="book">
       <div class="book-details-content">
         <img v-if="book.photo_book && book.photo_book.data" 
-             :src="`http://localhost:5555${book.photo_book.data.attributes.formats?.small?.url || book.photo_book.data.attributes.url}`" 
+             :src="`http://localhost:1337${book.photo_book.data.attributes.formats?.small?.url || book.photo_book.data.attributes.url}`" 
              alt="Foto do Livro" 
              class="book-photo" />
         <h2>{{ book.name_book || 'Título não disponível' }}</h2>
@@ -91,7 +91,7 @@ const checkAuthentication = () => {
 const fetchBookDetails = async () => {
   const token = userStore.token || localStorage.getItem('jwt');
   try {
-    const response = await fetch(`http://localhost:5555/api/books/${route.params.id}?populate=*`, {
+    const response = await fetch(`http://localhost:1337/api/books/${route.params.id}?populate=*`, {
       headers: {
         Authorization: `Bearer ${token}`, 
       },
@@ -107,7 +107,7 @@ const fetchBookDetails = async () => {
 };
 const fetchBookBids = async () => {
   try {
-    const response = await fetch(`http://localhost:5555/api/lances?filters[book][id][$eq]=${route.params.id}&populate=users_permissions_user`);
+    const response = await fetch(`http://localhost:1337/api/lances?filters[book][id][$eq]=${route.params.id}&populate=users_permissions_user`);
     
     if (!response.ok) throw new Error('Erro ao buscar os lances');
     
@@ -161,7 +161,7 @@ const placeBid = async () => {
     // Subtrai os créditos do usuário
     await userStore.deductCredits(bidAmount.value);
 
-    const response = await fetch('http://localhost:5555/api/lances', {
+    const response = await fetch('http://localhost:1337/api/lances', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -194,7 +194,7 @@ const placeBid = async () => {
 const deleteAuction = async () => {
   if (isAdmin.value) {
     try {
-      const response = await fetch(`http://localhost:5555/api/books/${route.params.id}`, {
+      const response = await fetch(`http://localhost:1337/api/books/${route.params.id}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${userStore.token}`,
@@ -229,7 +229,7 @@ const endAuction = async () => {
   if (isAdmin.value) {
     try {
       const winnerResult = getWinner();
-      const response = await fetch(`http://localhost:5555/api/books/${route.params.id}`, {
+      const response = await fetch(`http://localhost:1337/api/books/${route.params.id}`, {
         method: 'PUT', 
         headers: {
           'Content-Type': 'application/json',
