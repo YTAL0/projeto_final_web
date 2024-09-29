@@ -36,7 +36,7 @@ export const useUserStore = defineStore('userStore', () => {
     if (storedToken) {
       token.value = storedToken;
       try {
-        const response = await fetch('http://localhost:5555/api/users/me', {
+        const response = await fetch('http://localhost:1337/api/users/me', {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${storedToken}`,
@@ -68,7 +68,7 @@ export const useUserStore = defineStore('userStore', () => {
   const deductCredits = async (credits: number) => {
     if (user.value && token.value) {
       try {
-        const response = await fetch(`http://localhost:5555/api/users/${user.value.id}`, {
+        const response = await fetch(`http://localhost:1337/api/users/${user.value.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ export const useUserStore = defineStore('userStore', () => {
   const addCreditsToUser = async (credits: number) => {
     if (user.value && token.value) {
       try {
-        const response = await fetch(`http://localhost:5555/api/users/${user.value.id}`, {
+        const response = await fetch(`http://localhost:1337/api/users/${user.value.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
