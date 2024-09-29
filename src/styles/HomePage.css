@@ -1,0 +1,195 @@
+body {
+  background-color: #ffffff; 
+  margin: 0;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #0c0577; 
+}
+
+.header h1 {
+  color: #ffffff; 
+  margin: 0;
+}
+
+.credits {
+  color: #ffffff; /* Cor dos créditos */
+  margin-right: 10px; /* Espaçamento à direita */
+}
+
+.bottom-button-container {
+  display: flex; /* Flex para alinhar os botões */
+  justify-content: flex-end; /* Alinha os botões à direita */
+  gap: 10px; /* Espaço entre os botões */
+  padding: 20px; /* Espaço em torno dos botões */
+}
+
+
+.search-button {
+  background-color: #f5f5f500;
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.search-button i {
+  margin-right: 5px;
+}
+
+.search-input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.add-auction-button,
+.add-credits-button {
+  background-color: #0c0577; /* Cor do botão */
+  color: white; /* Cor do texto */
+  padding: 15px; /* Espaçamento interno */
+  border: none; /* Remove borda padrão */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor em forma de mão */
+}
+
+.books-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Definir 4 colunas fixas */
+  gap: 20px;
+  padding: 20px;
+}
+
+.book-card {
+  background-color: #0e0751;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  height: 400px; /* Definir altura fixa para todos os cards */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-card img {
+  width: 100%;
+  height: 200px; /* Definir altura fixa para a imagem */
+  object-fit: cover; /* Garantir que a imagem se ajuste dentro do espaço */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.book-card h2 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #ffffff; /* Cor branca para o nome do livro */
+}
+
+.book-card p {
+  font-size: 16px;
+  color: #b3b3b3; /* Cinza claro para o preço */
+}
+
+/* Estilos para o modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(133, 128, 128, 0.5); /* Fundo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center; /* Centraliza o conteúdo */
+}
+.modal-content h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.modal-content input {
+  width: 100%; /* Garante que o input ocupe a largura total */
+  max-width: 200px; /* Limita a largura máxima */
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin: 10px auto; /* Centraliza o input */
+}
+
+.modal-content button {
+  background-color: #0c0577; /* Cor do botão */
+  color: white; /* Cor do texto */
+  padding: 8px 12px; /* Diminuição do espaçamento interno */
+  border: none; /* Remove borda padrão */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor em forma de mão */
+  font-size: 14px; /* Diminuição da fonte */
+  margin: 5px; /* Espaço entre os botões */
+  
+}
+.button-container button {
+  background-color: #0c0577; /* Cor do botão */
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 5px;
+}
+.modal-content button:hover {
+  background-color: #2117a4;
+}
+.button-container button:hover {
+  background-color: #0a045e; /* Cor ao passar o mouse */
+}
+
+.menu {
+  position: absolute;
+  top: 60px; /* Ajuste conforme necessário */
+  right: 20px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  z-index: 1000; /* Para que fique acima de outros elementos */
+}
+
+.menu button {
+  display: block; /* Um botão por linha */
+  margin: 5px 0; /* Espaçamento entre os botões */
+}
+.login-button {
+  background-color: #4CAF50; /* Verde */
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+.login-button:hover {
+  background-color: #45a049;
+}

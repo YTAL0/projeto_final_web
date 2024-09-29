@@ -1,10 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import HomePage from '@/views/HomePage.vue';
-import AddAuction from '@/views/AddAuction.vue';
+import BookDetails from '@/views/BookDetails.vue'; 
 
 const routes = [
-  { path: '/', name: 'HomePage', component: HomePage },
-  { path: '/add-auction', name: 'AddAuction', component: AddAuction },
+  {
+    path: '/',
+    name: 'Home',
+    component: HomePage,
+  },
+  {
+    path: '/book/:id', 
+    name: 'BookDetails',
+    component: BookDetails,
+    props: true, 
+  },
 ];
 
 const router = createRouter({
