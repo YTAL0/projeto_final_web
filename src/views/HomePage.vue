@@ -191,7 +191,7 @@ const submitAuction = async () => {
   }
 
   try {
-    const response = await fetch('http://localhost:5555/api/books', {
+    const response = await fetch('http://localhost:1337/api/books', {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${userStore.token}`,
@@ -225,9 +225,9 @@ const filteredBooks = computed(() => {
 //Carregar os livros
 const fetchBooks = async () => {
   try {
-    const response = await fetch('http://localhost:5555/api/books?populate=*');
+    const response = await fetch('http://localhost:1337/api/books?populate=*');
     const data = await response.json();
-    const baseUrl = 'http://localhost:5555';
+    const baseUrl = 'http://localhost:1337';
 
     books.value = data.data.map((book: any) => {
       const photoUrl =
