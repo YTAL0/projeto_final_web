@@ -169,6 +169,5 @@ onMounted(() => {
 });
 </script>
 
-
 <style src="@/styles/LoginModal.css"></style>
 <style src="@/styles/RegistroModal.css"></style>
