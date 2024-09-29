@@ -17,7 +17,9 @@ Francisco Ytalo Nunes Batista - 540432 - CIência da computação
 
 - Livro
 - Lance
-- Usuário
+- Usuário deslogado
+- Usuário comum
+- Admin
 
 
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
