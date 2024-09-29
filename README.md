@@ -11,21 +11,20 @@ Francisco Ytalo Nunes Batista - 540432 - CIência da computação
 
 - Usuário não cadastrado
 - Usuário cadastrado
-- Leiloeiro 
+- Admin
 
 ## :spiral_calendar: Papéis ou tipos de usuário da aplicação
 
-- Leilão
-- Item
+- Livro
 - Lance
 - Usuário
 
 
 ## :triangular_flag_on_post:	 Principais funcionalidades da aplicação
 
-- Usuário não cadastrado apenas pode ver o leioões que estão acontecendo.
-- Usuário cadastrado pode ver o leilões que estão acontecendo, e realizar lances
-- Leiloeiro pode criar, iniciar e dar fim aos leilões.
+- Usuário não cadastrado apenas pode ver o leioões que estão acontecendo e se cadastrar.
+- Usuário cadastrado pode ver o leilões que estão acontecendo, criar leilões, realizar lances e adicionar créditos na sua conta.
+- Admin pode criar leilões, encerrar leilões, excluir leilões, realizar lances,
 
 
 ----
