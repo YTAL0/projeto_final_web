@@ -87,7 +87,7 @@ const toggleModals = () => {
 const handleLogin = async () => {
   if (email.value && password.value) {
     try {
-      const response = await fetch('http://localhost:5555/api/auth/local', {
+      const response = await fetch('http://localhost:1337/api/auth/local', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -134,7 +134,7 @@ const handleRegister = async () => {
   }
 
   try {
-    const response = await fetch('http://localhost:5555/api/auth/local/register', {
+    const response = await fetch('http://localhost:1337/api/auth/local/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
