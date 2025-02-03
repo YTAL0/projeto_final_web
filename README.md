@@ -40,7 +40,7 @@ Francisco Ytalo Nunes Batista - 540432 - CIência da computação
 
 **Frontend:**
 
-Vue, css, bootstrapo.
+Vue, css, bootstrap.
 
 **Backend:**
 
