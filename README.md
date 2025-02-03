@@ -12,6 +12,8 @@ Francisco Ytalo Nunes Batista - 540432 - CIência da computação
 - Usuário não cadastrado
 - Usuário cadastrado
 - Admin
+- Livro
+- Lance
 
 ## :spiral_calendar: Papéis ou tipos de usuário da aplicação
 
@@ -54,7 +56,7 @@ Strapi, pinia, TS.
 | --- | --- | --- | --- | --- |
 | user| X |  X  |  |  | 
 | book | X |   X |  |  X  |  | 
-| lance| X|  X |  |  |
+| lance| X|  X |X  |  |
 
 > Lembre-se que é necessário implementar o CRUD de pelo menos duas entidades.
 
